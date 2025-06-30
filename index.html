@@ -208,9 +208,8 @@
   const columns = Math.floor(width / fontSize);
   let drops = new Array(columns).fill(1);
 
-  // vitesse plus lente ici (intervalle plus long entre frames)
   let lastTime = 0;
-  const fps = 60; // Vitesse abaissée à 15 frames par seconde (moins rapide)
+  const fps = 60; 
   const interval = 1000 / fps;
 
   function drawMatrix(time = 0) {
@@ -237,7 +236,6 @@
   }
   drawMatrix();
 
-  // Logo rotation
   const logo = document.querySelector('.logo-container');
   window.addEventListener('mousemove', e => {
     const x = e.clientX / window.innerWidth - 0.5;
@@ -247,7 +245,6 @@
     logo.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
   });
 
-  // Typewriter effect
   const text = "Hacked by X-VDP-X";
   const target = document.getElementById('typewriter');
   let index = 0;
