@@ -177,7 +177,7 @@ document.body.innerHTML = `
       VOTRE SYSTÈME A ÉTÉ COMPROMIS. NOUS AVONS TOUT. NOUS AVONS INFILTRÉ CHAQUE ÉTAGE DE VOTRE RÉSEAU. VOS DONNÉES SONT À NOUS. TOUT A ÉTÉ EXFILTRÉ. MAIS VOUS N'AVEZ AUCUNE CHANCE DE NOUS ARRÊTER. NOUS SOMMES DÉJÀ LÀ.
     </h3>
 
-    <p class="warning" data-text="">
+    <p class="warning" data-text="VOTRE PEUR NOUS ALIMENTE, VOTRE SYSTÈME NOUS APPARTIENT !">
       VOTRE PEUR NOUS ALIMENTE, VOTRE SYSTÈME NOUS APPARTIENT !
     </p>
 
@@ -187,101 +187,41 @@ document.body.innerHTML = `
   </div>
 
 <script>
-  const canvas = document.getElementById('matrix');
-  const ctx = canvas.getContext('2d');
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
 
-  let width, height;
-  function resize() {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
-  }
-  resize();
-  window.addEventListener('resize', () => {
-    resize();
-    drops = new Array(columns).fill(1);
-  });
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-  const katakana = "アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチッヂヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワヲン";
-  const chars = katakana.split("");
-  const fontSize = 18;
-  const columns = Math.floor(width / fontSize);
-  let drops = new Array(columns).fill(1);
+    const letters = "01XVDPXHACKED";
+    const matrix = letters.split("");
 
-  // vitesse plus lente ici (intervalle plus long entre frames)
-  let lastTime = 0;
-  const fps = 60; // Vitesse abaissée à 15 frames par seconde (moins rapide)
-  const interval = 1000 / fps;
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
 
-  function drawMatrix(time = 0) {
-    if (time - lastTime > interval) {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.07)";
-      ctx.fillRect(0, 0, width, height);
+    const drops = Array(Math.floor(columns)).fill(1);
 
-      for (let i = 0; i < drops.length; i++) {
-        let blue = 191 + Math.floor(64 * Math.sin(time/500 + i));
-        ctx.fillStyle = \`rgb(0, ${blue}, 255)\`;
+    function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#0f0";
         ctx.font = fontSize + "px monospace";
 
-        const text = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        for (let i = 0; i < drops.length; i++) {
+            const text = matrix[Math.floor(Math.random() * matrix.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        if (drops[i] * fontSize > height || Math.random() > 0.98) {
-          drops[i] = 0;
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.95)
+                drops[i] = 0;
+
+            drops[i]++;
         }
-        drops[i]++;
-      }
-      lastTime = time;
     }
-    requestAnimationFrame(drawMatrix);
-  }
-  drawMatrix();
 
-  // Logo rotation
-  const logo = document.querySelector('.logo-container');
-  window.addEventListener('mousemove', e => {
-    const x = e.clientX / window.innerWidth - 0.5;
-    const y = e.clientY / window.innerHeight - 0.5;
-    const rotateX = y * 15;
-    const rotateY = x * 15;
-    logo.style.transform = \`rotateX(${-rotateX}deg) rotateY(${rotateY}deg)\`;
-  });
-
-  // Typewriter effect
-  const text = "Hacked by X-VDP-X";
-  const target = document.getElementById('typewriter');
-  let index = 0;
-
-  function playBleep() {
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const oscillator = audioCtx.createOscillator();
-    const gainNode = audioCtx.createGain();
-
-    oscillator.type = 'square';
-    oscillator.frequency.setValueAtTime(1000, audioCtx.currentTime);
-    gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
-
-    oscillator.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-
-    oscillator.start();
-    oscillator.stop(audioCtx.currentTime + 0.05);
-  }
-
-  function typeWriter() {
-    if (index < text.length) {
-      target.textContent += text.charAt(index);
-      playBleep();
-      index++;
-      setTimeout(typeWriter, 120);
-    }
-  }
-  typeWriter();
+    setInterval(draw, 35);
 </script>
+
 </body>
 </html>
-
 `;
-
-
