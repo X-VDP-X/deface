@@ -146,7 +146,7 @@ document.body.innerHTML = `
     </div>
 
     <h1 id="typewriter"></h1>
-    <h2># Hack Word # Hacked # X-VDP-X # Merry Christmas</h2>
+    <h2># Hack Word # Hacked # X-VDP-X </h2>
     <h3>
       VOTRE SYSTÈME A ÉTÉ COMPROMIS. NOUS AVONS TOUT. NOUS AVONS INFILTRÉ CHAQUE ÉTAGE DE VOTRE RÉSEAU. VOS DONNÉES SONT À NOUS. TOUT A ÉTÉ EXFILTRÉ. MAIS VOUS N'AVEZ AUCUNE CHANCE DE NOUS ARRÊTER. NOUS SOMMES DÉJÀ LÀ.
     </h3>
@@ -164,3 +164,4 @@ document.body.innerHTML = `
 </html>
 
 `
+
