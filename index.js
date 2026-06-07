@@ -65,10 +65,13 @@ document.body.innerHTML = `
   }
   h2 { font-size: 20px; }
   h3 {
-    font-size: 16px;
+    font-size: 21px;
     max-width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 10px;
   }
+  h4 {
+
+  margin: 0 auto 10px; 
   .warning {
     margin-top: 20px;
     font-weight: bold;
