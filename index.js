@@ -146,10 +146,11 @@ document.body.innerHTML = `
     </div>
 
     <h1 id="typewriter"></h1>
-    <h2># Hack Word # Hacked # X-VDP-X </h2>
-    <h3>
+    <h2>Hacked by diable'fire - Opvault</h2>
+    <h3># Hack Word # Hacked # X-VDP-X </h3>
+    <h4>
       VOTRE SYSTÈME A ÉTÉ COMPROMIS. NOUS AVONS TOUT. NOUS AVONS INFILTRÉ CHAQUE ÉTAGE DE VOTRE RÉSEAU. VOS DONNÉES SONT À NOUS. TOUT A ÉTÉ EXFILTRÉ. MAIS VOUS N'AVEZ AUCUNE CHANCE DE NOUS ARRÊTER. NOUS SOMMES DÉJÀ LÀ.
-    </h3>
+    </h4>
 
     <p class="warning" data-text="VOTRE PEUR NOUS ALIMENTE, VOTRE SYSTÈME NOUS APPARTIENT !">
       VOTRE PEUR NOUS ALIMENTE, VOTRE SYSTÈME NOUS APPARTIENT !
