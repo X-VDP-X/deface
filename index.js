@@ -1,4 +1,5 @@
 document.documentElement.innerHTML = `
+document.documentElement.innerHTML = `
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -182,4 +183,5 @@ window.addEventListener("load", () => {
 
 </body>
 </html>
+`;
 `;
