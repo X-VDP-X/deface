@@ -146,7 +146,7 @@ document.documentElement.innerHTML = `
 
   <div class="content">
     <div class="logo-container" onclick="window.location.href='https://t.me/xvdpx6'">
-      <img src="https://i.postimg.cc/q79gXyTp/image-2.webp" alt="Logo X-VDP-X" />
+      <img src="https://i.postimg.cc/7Lt7wjMy/VDP-LOGO.webp" alt="Logo X-VDP-X" />
     </div>
 
     <h1 id="typewriter"></h1>
